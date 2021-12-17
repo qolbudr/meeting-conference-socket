@@ -56,7 +56,7 @@ function getOrCreatePeering(socketId) {
             peerConnection = new RTCPeerConnection({'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]});
             peerConnection.addStream(localStream);
             peerConnection.ontrack = function (event) {
-                getOrCreateVideo(socketId, event.streams[0], false)
+                getOrCreateVideo(socketId, event.streams[0], true)
             }
             peerConnection.onicecandidate = function (event) {
                 if (event.candidate != null) {
