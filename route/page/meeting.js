@@ -11,12 +11,14 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true}).then(function (s
 
 socket.on("startPeering", function (sockets) {
     for (let i = 0; i < sockets.length; i++) {
-        const peerConnection = getOrCreatePeering(sockets[i]);
-        peerConnection.createOffer().then(function (description) {
-            peerConnection.setLocalDescription(description).then(function () {
-                socket.emit("sdp", sockets[i], peerConnection.localDescription);
-            });
-        });
+    		if(i < 100) {
+    			const peerConnection = getOrCreatePeering(sockets[i]);
+	        peerConnection.createOffer().then(function (description) {
+	            peerConnection.setLocalDescription(description).then(function () {
+	                socket.emit("sdp", sockets[i], peerConnection.localDescription);
+	            });
+	        });
+    		}
     }
 })
 
@@ -78,6 +80,9 @@ function getOrCreateVideo(socketId, stream, isMuted) {
     if (socketVideo == null) {
         socketVideo = document.createElement("video");
         let videoContainer = document.getElementById("participant-container");
+        let userThumbnailLength = document.querySelectorAll('.user-thumbnail').length;
+        let videoItemLength = document.querySelectorAll('.user-thumbnail video').length;
+
         socketVideo.id = ("video-" + socketId)
         socketVideo.autoplay = true;
         socketVideo.muted = isMuted;
@@ -86,9 +91,10 @@ function getOrCreateVideo(socketId, stream, isMuted) {
         var videoItem = document.createElement("div");
         videoItem.className="user-thumbnail flex-fill";
         videoItem.appendChild(socketVideo);
-        videoContainer.appendChild(videoItem);
+        videoContainer.replaceChild(videoItem, videoContainer.childNodes[videoItemLength]);
+
+        videoContainer.removeChild(videoContainer.childNodes[userThumbnailLength - 1])
         //video div
-        onVideoCountChange()
     }
     socketVideo.srcObject = stream;
 }
@@ -97,27 +103,4 @@ function deleteVideo(socketId) {
     let socketVideo = document.getElementById("video-" + socketId);
     socketVideo.parentNode.removeChild(socketVideo);
     onVideoCountChange()
-}
-
-function onVideoCountChange() {
-    videoItem = document.getElementsByClassName("video-item");
-    videoWidth = videoItem.length;
-
-    let height = document.body.clientHeight;
-    let videoHeight=100;
-
-    if(videoItem.length>=2){
-      videoHeight=40;
-    }
-    if(videoItem.length>4){
-      videoHeight=24;
-    }
-
-    if(videoItem.length === 1) {
-        videoItem[0].style.height = "100%";
-    } else {
-        for(let i=0;i<videoItem.length; i++) {
-            videoItem[i].style.height = videoHeight+"%";
-        }
-    }
 }

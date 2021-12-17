@@ -23,12 +23,21 @@
 				background-size: cover;
 			}
 
+			.wrapper {
+				width: 80vw;
+			}
+
 			iframe,#livechat {
 				height: 55vh;
 			}
 
 			#livechat {
 				box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+			}
+
+			.col-md-4 {
+				padding-left: 10px;
+				padding-right: 0;
 			}
 
 			.chat-body {
@@ -88,17 +97,44 @@
 				#participant {
 					display: none;
 				}
+
+				.col-md-4 {
+					padding: 0;
+				}
+			}
+
+			@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (orientation:portrait) {
+	      iframe,#livechat {
+					max-height: 30vh;
+				}
+
+				.wrapper {
+					width: 90vw;
+				}
+	    }
+
+			@media (orientation: landscape) {
+			  @media only screen and (max-width: 768px) {
+			  	iframe {
+			  		height: 70vh;
+						max-height: 100vh;
+					}
+
+					#livechat {
+						display: none;
+					}
+			  }
 			}
 		</style>
 	</head>
 	<body>
 		<div class="d-flex w-100 h-100 align-items-center justify-content-center">
-			<div class="container">
-				<div class="row m-0 p-0 g-2">
-					<div class="col-md-8 p-0">
+			<div class="wrapper">
+				<div class="row g-1">
+					<div class="col-lg-8 p-0">
 						<iframe class="w-100" src="https://www.youtube.com/embed/etIJMVIvVgg" frameborder="0" allow="fullscreen"></iframe>
 					</div>
-					<div class="col-md-4 p-0">
+					<div class="col-lg-4 p-0">
 						<div id="livechat" class="w-100 bg-white rounded">
 							<div class="chat-header px-3 py-2 d-flex justify-content-between align-items-center">
 								<h6 class="m-0">Live Chat</h6>
@@ -117,9 +153,109 @@
 					</div>
 					<div class="col-md-12 p-0" id="participant">
 						<div class="w-100 d-flex flex-wrap" id="participant-container">
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
+							<div class="user-thumbnail flex-fill"></div>
 						</div>
 					</div>
-					<div class="col-md-12 mt-3 text-right">
+					<div class="col-md-12 mt-3 text-right p-0">
 						<a class="btn btn-primary text-white p-2" id="backtolobby"><i class="fa fa-arrow-left"></i> Back to Lobby</a>
 						<a class="btn btn-primary text-white p-2" id="joinzoom"><i class="fa fa-link"></i> Join Zoom</a>
 					</div> 
