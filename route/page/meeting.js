@@ -72,7 +72,7 @@ function getOrCreatePeering(socketId) {
 }
 
 function getRoomKey() {
-    return new URLSearchParams(window.location.search).get("key");
+    return new URLSearchParams(window.location.search).get("roomId");
 }
 
 function getOrCreateVideo(socketId, stream, isMuted) {
