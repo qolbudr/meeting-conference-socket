@@ -4,12 +4,15 @@
   "description": "socket backend for conference website",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node app.js"
   },
   "author": "Qolbu Dzikru",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^4.4.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
