@@ -23,6 +23,7 @@ const getMessage = (roomId) => {
 
 	 	const chatBody = document.querySelector('.chat-body');
 	 	chatBody.innerHTML = html;
+	 	chatBody.scrollTo(0, chatBody.scrollHeight);
 	}).catch(function() {
 	  throw("Failed to get data");
 	});
@@ -34,6 +35,7 @@ const refreshMessage = () => {
 }
 
 const sendingMessage = (userId, roomId, message) => {
+	const sendMessage = document.querySelector('#send-message');
 	const http = new XMLHttpRequest();
 	const url = 'https://migrantfest.com/api/send/chat';
 	const params = `userId=${userId}&roomId=${roomId}&message=${message}`;
@@ -41,6 +43,7 @@ const sendingMessage = (userId, roomId, message) => {
 
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	http.send(params);
+	sendMessage.disabled = false;
 	refreshMessage();
 }
 
