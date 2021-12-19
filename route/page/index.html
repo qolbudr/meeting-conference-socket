@@ -18,6 +18,12 @@
 				font-family: 'PT Sans Narrow', sans-serif;
 			}
 
+			.modal-content {
+				background-color: rgba(255, 255, 255, .50); 
+				backdrop-filter: blur(5px); 
+				border:none;
+			}
+
 			body {
 				background: url('page/bg.jpg');
 				background-size: cover;
@@ -84,10 +90,11 @@
 			}
 
 			.user-thumbnail {
-				background-color: #f3f3f3;
+				background-color: rgba(255, 255, 255, .15);  
+ 				/*backdrop-filter: blur(1px);*/
 				width: calc(100% / 20);
 				height: 40px;
-				border: 1px solid gray;
+				border: 1px solid white;
 			}
 
 			@media only screen and (max-width: 1100px) {
@@ -278,13 +285,98 @@
 						</div>
 					</div>
 					<div class="col-md-12 mt-3 text-center p-0">
-						<a href="https://migrantfest.com" class="btn btn-primary text-white p-2" id="backtolobby"><i class="fa fa-arrow-left"></i> Back to Lobby</a>
+						<button data-toggle="modal" data-target="#feedback" class="btn btn-primary text-white p-2" id="backtolobby"><i class="fa fa-arrow-left"></i> Back to Lobby</button>
 						<a class="btn btn-primary text-white p-2" id="joinzoom"><i class="fa fa-link"></i> Join Zoom</a>
 						<button class="btn btn-primary text-white p-2" onclick="toggleFullScreen()"><i class="fa fa-expand"></i> Toggle Fullsceen</a>
 					</div> 
 				</div>
 			</div>
 		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="feedback" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body text-center">
+		      	<div class="title mb-4">
+			        <h5>Gimana sesi yang baru kamu lihat hari ini ?</h5>
+			        <h6>Silahkan berikan feedback dengan jujur sebagai bahan evaluasi kami selanjutnya</h6>
+			      </div>
+		        <div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="sc-first" name="session-condition" value="Asyik sesinya" class="custom-control-input">
+						  <label class="custom-control-label" for="sc-first">Asyik sesinya</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="sc-second" name="session-condition" value="Kurang asyik" class="custom-control-input">
+						  <label class="custom-control-label" for="sc-second">Kurang asyik</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="sc-third" name="session-condition" value="Seharusnya lebih asyik" class="custom-control-input">
+						  <label class="custom-control-label" for="sc-third">Seharusnya lebih asyik</label>
+						</div>
+						<div class="control mt-4">
+							<button id="next-reason" data-toggle="modal" data-target="#reason" data-dismiss="modal" class="btn btn-primary btn-block" disabled>Selanjutnya</button>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade" id="reason" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body text-center">
+		      	<div class="title mb-4">
+			        <h5>Boleh tau kenapa kamu meninggalkan sesi ini ?</h5>
+			        <h6>Silahkan berikan feedback dengan jujur sebagai bahan evaluasi kami selanjutnya</h6>
+			      </div>
+		        <div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="reason-first" name="reason" value="Sesi kurang asyik" class="custom-control-input">
+						  <label class="custom-control-label" for="reason-first">Sesi kurang asyik</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="reason-second" name="reason" value="Mau lihat sesi lain" class="custom-control-input">
+						  <label class="custom-control-label" for="reason-second">Mau lihat sesi lain</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="reason-third" name="reason" value="Mau lihat gelar produk/foto booth" class="custom-control-input">
+						  <label class="custom-control-label" for="reason-third">Mau lihat gelar produk/foto booth</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="reason-fourth" name="reason" value="Mau dengar music live" class="custom-control-input">
+						  <label class="custom-control-label" for="reason-fourth">Mau dengar music live</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="reason-fifth" name="reason" value="Mau keluar dari seluruh acara" class="custom-control-input">
+						  <label class="custom-control-label" for="reason-fifth">Mau keluar dari seluruh acara</label>
+						</div>
+						<div class="control mt-4">
+							<button id="next-event" data-toggle="modal" data-target="#event" data-dismiss="modal" class="btn btn-primary btn-block" disabled>Selanjutnya</button>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade" id="event" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body text-center">
+		      	<div class="title mb-4">
+			        <h5>Usulan topik acara berikutnya ?</h5>
+			        <h6>Silahkan berikan feedback dengan jujur sebagai bahan evaluasi kami selanjutnya</h6>
+			      </div>
+		        <div class="form-group">
+		        	<textarea id="next-event-text" placeholder="Usulan Acara...." class="form-control" rows="5"></textarea>
+		        </div>
+						<div class="control mt-4">
+							<button id="finish-feedback" class="btn btn-primary btn-block" disabled>Kirim</button>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

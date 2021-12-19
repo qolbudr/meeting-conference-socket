@@ -43,6 +43,7 @@ const sendingMessage = (userId, roomId, message) => {
 
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	http.send(params);
+	
 	sendMessage.disabled = false;
 	refreshMessage();
 }
